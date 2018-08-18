@@ -2,19 +2,22 @@
 <br/>
 <div class = "float-right btn-group">
   <button class=" btn btn-primary" routerLink="/home"> Home </button>
+
 </div>
 
   <h3> Registration Page </h3>
 
+  <form #f="ngForm" (ngSubmit)="registerUser()">
 
+    <button class="btn btn-danger float-right btn" type="reset" value="Reset"> Reset </button>
+    <br/>
+    <br/>
 
-  <br/>
-
-  <form>
     <div class="form-group row">
       <label for="firstNameFld" class="col-sm-2 col-form-label">First-Name</label>
       <div class="col-sm-10">
-        <input type= "text" class="form-control" id="firstNameFld" placeholder="First Name">
+        <input  [(ngModel)] = "firstName" name = "first"
+          type= "text" class="form-control" id="firstNameFld" placeholder="First Name">
       </div>
     </div>
 
@@ -22,7 +25,8 @@
       <div class="form-group row">
         <label for="lastNameFld" class="col-sm-2 col-form-label">Last-Name</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="lastNameFld" placeholder="Last Name">
+          <input [(ngModel)] = "lastName" name ="last"
+            type="text" class="form-control" id="lastNameFld" placeholder="Last Name">
         </div>
       </div>
 
@@ -30,65 +34,67 @@
         <div class="form-group row">
           <label for="emailFld" class="col-sm-2 col-form-label">Email</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="emailFld" placeholder="Email">
+            <input  [(ngModel)] = "email"  name ="mail"
+              type="text" class="form-control" id="emailFld" placeholder="Email" required = "required">
           </div>
         </div>
 
           <div class="form-group row">
             <label for="contactFld" class="col-sm-2 col-form-label">Contact</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="contactFld" placeholder="Contact">
+              <input [(ngModel)] = "contact" name ="con"
+                type="number" class="form-control" id="contactFld" placeholder="Contact">
             </div>
           </div>
 
-          <div class="form-group row">
-            <label for="expertiseId" class="col-sm-2 col-form-label">Area of Expertise</label>
-            <div class="col-sm-10 " id = "expertiseId">
-              <div class ="form-check-inline">
-                <input type="checkbox" class = "form-check-input">  Algorithms & Mathematics &nbsp;
-              </div>
+    <div class="form-group row">
+      <label for = 'interestFld'  class="col-sm-2 col-form-label"> Fields of Interest/Expertise</label>
 
-              <div class = "form-check-inline">
-                <input type =  "checkbox" class="form-check-input"> Science &nbsp;
-              </div>
-              <div class="form-check-inline">
-                <input type="checkbox" class="form-check-input"> Arts & Literature &nbsp;
-              </div>
-              <div class = "form-check-inline">
-                <input type="checkbox" class="form-check-input"> Computer Science &nbsp;
-              </div>
+      <div
+        class="col-sm-10">
+        <input [(ngModel)] = "field1" id = "interestFld" name ="1"
+                class="form-control"  placeholder="Interest-1">
+        <br/>
+        <input [(ngModel)] = "field2"  name = "2"
+                class="form-control"  placeholder="Interest-2">
+        <br/>
+        <input [(ngModel)] = "field3"  name = "3"
+                class="form-control"  placeholder="Interest-3">
+        <br/>
+        <input [(ngModel)] = "field4"  name ="4"
+                class="form-control"  placeholder="Interest-4">
+      </div>
+    </div>
 
-              <div class = "form-check-inline">
-                <input type="checkbox" class="form-check-input"> Others
-              </div>
-            </div>
-          </div>
-
-            <div class="form-group row">
-              <label for= "otherFld" class="col-sm-2 col-form-label">If Selected Others</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id = "otherFld" placeholder="field of expertise">
-              </div>
-            </div>
-
-
-
-
-          <div class="form-group row">
+    <div class="form-group row">
               <label for= "usernameFld" class="col-sm-2 col-form-label">Username</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id = "usernameFld" placeholder="Username">
+                <input [(ngModel)] = "username" required   name ="user"
+                  type="text" class="form-control" id = "usernameFld" placeholder="Username">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <input [(ngModel)] = "password" required = "required" name ="pass1"
+                         type="password" class="form-control" id="inputPassword" placeholder="Password">
               </div>
             </div>
 
-          
+            <div class="form-group row">
+              <label for="inputPassword2" class="col-sm-2 col-form-label"> Confirm-Password</label>
+              <div class="col-sm-10">
+                <input [(ngModel)] = "password2" required = "required" name ="pass2"
+                  type="password" class="form-control" id="inputPassword2"
+                       placeholder="Confirm-Password">
+              </div>
+            </div>
+
+
+    <br/>
+
+
     <br/>
 
     <button type="submit" class="btn btn-success mb-2 form-control">Register</button>
