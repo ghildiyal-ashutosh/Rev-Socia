@@ -109,7 +109,7 @@ export class UserServiceClient {
     registerUserByAdmin(user)
     {
         return fetch((USER_API_URL + '/admin'),{
-            method:'PUT',
+            method:'POST',
             credentials :'include',
             body: JSON.stringify(user),
             headers: {
