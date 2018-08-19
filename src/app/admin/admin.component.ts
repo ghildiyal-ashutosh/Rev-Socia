@@ -113,7 +113,7 @@ export class AdminComponent implements OnInit {
               role: this.role, contact: this.contact, email: this.email, username: username, password: password
             };
 
-            this.userService.registerUser(user)
+            this.userService.registerUserByAdmin(user)
               .then((response) => {
                 alert("User Created Successfully");
 

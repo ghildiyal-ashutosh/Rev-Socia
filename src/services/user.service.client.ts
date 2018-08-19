@@ -106,4 +106,17 @@ export class UserServiceClient {
     }).then((response) => response.json())
 }
 
+    registerUserByAdmin(user)
+    {
+        return fetch((USER_API_URL + '/admin'),{
+            method:'PUT',
+            credentials :'include',
+            body: JSON.stringify(user),
+            headers: {
+                'content-type' : 'application/json'
+            }
+        }).then((response) =>response.json());
+
+    }
+
 }
