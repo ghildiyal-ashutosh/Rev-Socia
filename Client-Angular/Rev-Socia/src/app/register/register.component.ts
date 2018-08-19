@@ -18,10 +18,6 @@ export class RegisterComponent implements OnInit {
   password2 = '';
   contact = '';
 
-    field1  = '';
-    field2 = '';
-    field3 ='';
-    field4 = '';
 
 
   constructor( private userService: UserServiceClient,
@@ -49,17 +45,13 @@ export class RegisterComponent implements OnInit {
           if (response.username === '-1') {
 
 
-            var field1 = this.field1;
-            var field2 = this.field2;
-            var field3 = this.field3;
-            var field4 = this.field4;
-            const interest = {field1: field1, field2: field2, field3: field3, field4: field4};
+
             var firstName = this.firstName;
             var lastName = this.lastName;
             var email = this.email;
             var contact = this.contact;
             var role  = 'User';
-            var bitcoins  = 500;
+            var crypto  = 500;
 
 
             const user = {
@@ -69,9 +61,8 @@ export class RegisterComponent implements OnInit {
               password: password,
               email: email,
               contact: contact,
-              interest: interest,
               role: role,
-              bitcoins: bitcoins
+             crypto: crypto
             };
 
             this.userService.registerUser(user)

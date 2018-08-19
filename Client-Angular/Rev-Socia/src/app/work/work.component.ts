@@ -10,7 +10,7 @@ import {WorkServiceClient} from "../../services/work.service.client";
 })
 export class WorkComponent implements OnInit {
 
-user = {username: '', bitcoins: ''};
+user = {username: '', crypto: ''};
 title = '';
 category = '';
 points = '';
@@ -25,6 +25,7 @@ rubric  =  '';
               createWork()
               {
                 if ((this.title !== null && this.title !== '')
+                  && (this.category !== null && this.category !== '')
                   && (this.points !== '' && this.points !== null))
                 {
                 const work = {title: this.title, category: this.category,
@@ -37,7 +38,7 @@ rubric  =  '';
                    .then((response) => alert('Work Created...Ready for review'));
               }
               else {
-                  alert("Title and points are mandatory fields");
+                  alert("Title, Category and Cryptos are mandatory fields");
                 }
               }
 

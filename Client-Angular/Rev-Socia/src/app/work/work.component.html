@@ -5,12 +5,8 @@
   </div>
   <br/>
   <br/>
-  <br>
-  <div class ="float-right col2">
-  <label for = "coins">Coins In Wallet</label>
-    <br/>
-  <input id = "coins" readonly = "readonly" class="form-control" value = {{user.bitcoins}}/>
-  </div>
+  <input id = "coins" readonly = "readonly" class="form-control float-right col-2" value = "crypto: {{user.crypto}}"/>
+
   <h4> Welcome To Work Garage !!!  {{user.username}}</h4>
   <br/>
 
@@ -21,18 +17,25 @@
       id = "title" placeholder="title of your work" />
   </div>
 
+<div>
+  <label for ="repeatSelect"> Select a category for your work</label>
+  <select class="form-control" size="6px"
+          name="repeatSelect" id="repeatSelect" [(ngModel)] = "category">
+    <option value = "Science"> Science</option>
+    <option value = "Technology"> Technology</option>
+    <option value = "Computer"> Computer Science </option>
+    <option value = "Arts"> Arts & Literature </option>
+    <option value = "Algorithm"> Algorithms</option>
+    <option value = "Mathematics"> Mathematics</option>
+  </select>
   <div>
-    <label for = "category"> Category</label>
-    <input [(ngModel)] = "category"  class="form-control"
-             id = "category" placeholder = " Example : Arts, Tech, Science">
-  </div>
 
 
 
-  <div>
+    <div>
     <label for = "points">Coins</label>
-    <input [(ngModel)] = "points" class="form-control"
-             id = "points" placeholder="Coins you will give for the reviewing process" />
+    <input [(ngModel)] = "points" class="form-control" type = "number"
+             id = "points" placeholder="Crypto you will give for the reviewing process" />
   </div>
 
 
@@ -49,9 +52,12 @@
     <textarea [(ngModel)] = "description" class="form-control"
                 id = "description" placeholder="Describe this work you want to get reviewed!!!" ></textarea>
   </div>
+  <br/>
 
 
 <button (click)="createWork()" class = "btn btn-success btn-block"> Create Work</button>
+
+  <br/>
 
 </div>
 

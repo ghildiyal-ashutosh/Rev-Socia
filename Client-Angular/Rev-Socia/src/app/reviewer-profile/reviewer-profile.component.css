@@ -1,0 +1,15 @@
+.icons:hover
+{
+  color: red;
+  cursor: pointer;
+}
+
+.icons{
+  color: blue;
+}
+
+.table{
+  margin: 0px;
+}
+
+

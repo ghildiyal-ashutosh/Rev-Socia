@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import {routing} from "./app.routing";
 import {FormsModule} from "@angular/forms";
@@ -13,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { WorkComponent } from './work/work.component';
 import {WorkServiceClient} from "../services/work.service.client";
+import { ReviewerProfileComponent } from './reviewer-profile/reviewer-profile.component';
+import {ReviewerServiceClient} from "../services/reviewer.service.client";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {WorkServiceClient} from "../services/work.service.client";
     ProfileComponent,
     LoginComponent,
     AdminComponent,
-    WorkComponent
+    WorkComponent,
+    ReviewerProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import {WorkServiceClient} from "../services/work.service.client";
   ],
   providers: [
     UserServiceClient,
-    WorkServiceClient
+    WorkServiceClient,
+    ReviewerServiceClient
   ],
   bootstrap: [AppComponent]
 })

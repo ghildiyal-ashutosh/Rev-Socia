@@ -1,0 +1,98 @@
+<div class ="container-fluid">
+<br/>
+  <input class ="form-control col-2 float-right" readonly = "readonly" id ="coins" value = "crypto: {{user.crypto}}"/>
+
+
+  <h4> Reviewer's Profile : {{reviewer.title}}</h4>
+  <br/>
+  <input class ="form-control col-2 float-right" readonly = "readonly" id ="rating" value = "rating: {{reviewer.rating}}"/>
+  <br/>
+
+  <div [hidden] = "reviewerStatus">
+    <label for = "reviewerName">  Enter your Reviewer Profile's Title</label>
+    <input class = "form-control " id = "reviewerName" [(ngModel)] = "title" placeholder="Profile's Title"/>
+
+    <label> Select field/fields that you have knowledge of:</label>
+    <select class="form-control" size="6px"
+            name="repeatSelect" id="repeatSelect" [(ngModel)] = "fields" multiple>
+      <option value = "Science"> Science</option>
+      <option value = "Technology"> Technology</option>
+      <option value = "Computer"> Computer Science </option>
+      <option value = "Arts"> Arts & Literature </option>
+      <option value = "Algorithm"> Algorithms</option>
+      <option value = "Mathematics"> Mathematics</option>
+    </select>
+    <br/>
+    <button class="btn btn-primary form-control" (click)="createReviewer()"> Add</button>
+  </div>
+  <br/>
+
+
+
+    <div class ="row" [hidden]="!reviewerStatus">
+
+  <ul
+    class ="list-group col-8 ">
+    <li class ="list-group-item active">
+      Your Selected Areas of Expertise
+    </li>
+    <br/>
+    <li *ngFor = "let field of reviewer.fields"
+      class = "list-group-item">
+      {{field}}
+      <i class =" icons fa fa-trash fa-2x float-right" (click)="deleteField(field)"></i>
+    </li>
+  </ul>
+
+
+
+  <div class="col-4">
+  <select class="form-control" size="6px"
+          name="repeatSelect"  [(ngModel)] = "fields2" multiple>
+    <option value = "Science"> Science</option>
+    <option value = "Technology"> Technology</option>
+    <option value = "Computer"> Computer Science </option>
+    <option value = "Arts"> Arts & Literature </option>
+    <option value = "Algorithm"> Algorithms</option>
+    <option value = "Mathematics"> Mathematics</option>
+  </select>
+    <br/>
+    <button (click)="updateFields()" class ="btn btn-primary form-control float-right"> Update</button>
+    <br/>
+    
+  </div>
+
+
+      <h4> List of available work for review</h4>
+      <table class =" table table-responsive table-striped">
+        <thead class ="thead-light">
+        <tr>
+          <th>
+            Title
+          </th>
+          <th> Crypto Rewards</th>
+          <th> Category</th>
+          <th>Rubric</th>
+          <th> Description</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr *ngFor = "let work of availableWork">
+          <td>{{work.title}}</td>
+          <td>{{work.points}}</td>
+          <td> {{work.category}}</td>
+          <td> {{work.rubric}}</td>
+          <td>{{work.description}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+
+
+
+
