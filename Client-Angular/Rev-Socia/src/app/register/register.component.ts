@@ -59,6 +59,7 @@ export class RegisterComponent implements OnInit {
             var email = this.email;
             var contact = this.contact;
             var role  = 'User';
+            var bitcoins  = 500;
 
 
             const user = {
@@ -69,7 +70,8 @@ export class RegisterComponent implements OnInit {
               email: email,
               contact: contact,
               interest: interest,
-              role: role
+              role: role,
+              bitcoins: bitcoins
             };
 
             this.userService.registerUser(user)
@@ -94,6 +96,8 @@ export class RegisterComponent implements OnInit {
 
     else if (username === '')
       message = "username can't not be empty";
+
+    alert(message);
 
 
     }

@@ -22,11 +22,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css",
-              "styles.css",
-              "../node_modules/font-awesome/css/font-awesome.css"
-            ],
+            "styles": [],
             "scripts": []
           },
           "configurations": {

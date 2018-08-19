@@ -6,16 +6,23 @@ import {routing} from "./app.routing";
 import {FormsModule} from "@angular/forms";
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterComponent } from './register/register.component';
-import {AngularFontAwesomeModule} from 'angular-font-awesome';
+import {AngularFontAwesomeModule} from 'angular-font-awesome'
 import {UserServiceClient} from "../services/user.service.client";
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { WorkComponent } from './work/work.component';
+import {WorkServiceClient} from "../services/work.service.client";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent,
+    AdminComponent,
+    WorkComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +31,8 @@ import { ProfileComponent } from './profile/profile.component';
     AngularFontAwesomeModule
   ],
   providers: [
-    UserServiceClient
+    UserServiceClient,
+    WorkServiceClient
   ],
   bootstrap: [AppComponent]
 })

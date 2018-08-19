@@ -42,6 +42,14 @@ export class UserServiceClient {
     })
   }
 
+  deleteUser(userId)
+  {
+    return fetch(USER_API_URL + '/' + userId,{
+      method: 'DELETE',
+      credentials : 'include'
+    }).then(response => response.json())
+  }
+
   updateUser(user)
   {
     return fetch((USER_API_URL),{
@@ -69,6 +77,22 @@ export class UserServiceClient {
 
     }).then((response) => response.json());
 
+  }
+
+  findAllUsers()
+  {
+    return fetch(USER_API_URL,{
+      credentials:'include'
+    }).then(function (response) {
+      return response.json();
+    })
+  }
+
+  findUserById(userId)
+  {
+    return fetch((USER_API_URL + '/userId/' + userId ),{
+      credentials : 'include'
+    }).then((response) => response.json())
   }
 
 

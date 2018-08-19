@@ -1,0 +1,57 @@
+<div class ="container-fluid">
+  <br/>
+  <div class ="btn-group float-right">
+    <button class = "btn btn-primary" routerLink="/profile"> Profile</button>
+  </div>
+  <br/>
+  <br/>
+  <br>
+  <div class ="float-right col2">
+  <label for = "coins">Coins In Wallet</label>
+    <br/>
+  <input id = "coins" readonly = "readonly" class="form-control" value = {{user.bitcoins}}/>
+  </div>
+  <h4> Welcome To Work Garage !!!  {{user.username}}</h4>
+  <br/>
+
+  <div>
+
+    <label for = "title">Title</label>
+    <input [(ngModel)] = "title" class="form-control"
+      id = "title" placeholder="title of your work" />
+  </div>
+
+  <div>
+    <label for = "category"> Category</label>
+    <input [(ngModel)] = "category"  class="form-control"
+             id = "category" placeholder = " Example : Arts, Tech, Science">
+  </div>
+
+
+
+  <div>
+    <label for = "points">Coins</label>
+    <input [(ngModel)] = "points" class="form-control"
+             id = "points" placeholder="Coins you will give for the reviewing process" />
+  </div>
+
+
+
+  <div>
+    <label for = "rubric">Rubric</label>
+    <textarea [(ngModel)] = "rubric" class="form-control"
+                id = "rubric" placeholder="Any key points you want reviewer to focus" ></textarea>
+  </div>
+
+
+  <div>
+    <label for = "description">Description</label>
+    <textarea [(ngModel)] = "description" class="form-control"
+                id = "description" placeholder="Describe this work you want to get reviewed!!!" ></textarea>
+  </div>
+
+
+<button (click)="createWork()" class = "btn btn-success btn-block"> Create Work</button>
+
+</div>
+

@@ -3,6 +3,7 @@ import {UserServiceClient} from "../../services/user.service.client";
 
 
 import {Router} from "@angular/router";
+import {WorkServiceClient} from "../../services/work.service.client";
 
 @Component({
   selector: 'app-profile',
@@ -14,7 +15,7 @@ export class ProfileComponent implements OnInit {
   user = {contact: 0, firstName:'',lastName:'',email: '',
     interest:{field1: '', field2: '' ,field3: '', field4: ''}, role: '' , username: '' , _id: -1 };
 
-  contact;
+  contact = 0;
   firstName = '';
   lastName = '';
   email = '';
@@ -22,11 +23,15 @@ export class ProfileComponent implements OnInit {
   field2 = '';
   field3 = '';
   field4 = '';
-  role: '';
+  role =  '';
+  _id = -1;
+  adminStatus = false;
+   userWork =  {works:[{title: '', timeStamp: '', points: 0}]};
 
 
   constructor(private userService: UserServiceClient,
-               private router: Router) { }
+               private router: Router,
+              private workService: WorkServiceClient){ }
 
 
   logout()
@@ -38,6 +43,18 @@ export class ProfileComponent implements OnInit {
           });
   }
 
+  deleteWork(work)
+  {
+    var workId = work._id;
+    this.workService
+      .deleteWork(workId)
+      .then(() => {
+        alert("Work deleted");
+        this.workService.findWorkForUser()
+          .then((work) => this.userWork = work);
+      })
+  }
+
 
   updateUser()
   {
@@ -47,7 +64,7 @@ export class ProfileComponent implements OnInit {
                   email:this.email,
                   contact:this.contact,
                    interest: interest,
-                    role: this.role}
+                    role: this.role, _id: this._id}
 
                    console.log(user);
 
@@ -55,8 +72,7 @@ export class ProfileComponent implements OnInit {
                       .then((response) => {
                         if (response.username !== -1)
                         {
-                          this.user = response;
-                          this.assignValues(this.user);
+                         alert("Updated");
                         }
                         else
                           alert("Didnt update Something went wrong");
@@ -66,6 +82,13 @@ export class ProfileComponent implements OnInit {
 
   assignValues(user)
   {
+
+    this._id = user._id;
+    this.role =  user.role;
+    if (this.role === 'Admin') {
+      this.adminStatus = true;
+    }
+
    this.contact = user.contact;
     this.firstName = user.firstName;
     this.lastName = user.lastName;
@@ -74,10 +97,8 @@ export class ProfileComponent implements OnInit {
    this. field2 = user.interest.field2;
     this.field3 = user.interest.field3;
    this. field4 = user.interest.field3;
-    this.role =  user.role;
 
-
-      }
+    }
 
 
   ngOnInit() {
@@ -86,6 +107,13 @@ export class ProfileComponent implements OnInit {
         if(response.username !== '-1') {
           this.user = response;
           this.assignValues(this.user);
+
+          this.workService.findWorkForUser()
+            .then((work) => {
+              this.userWork = work
+              console.log(work);
+
+            });
           }
         else {
           alert('No User Logged In');

@@ -1,0 +1,10 @@
+.icons :hover {
+  color: #34ce57;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+.icons{
+  font-size: 30px;
+  color:blue;
+}

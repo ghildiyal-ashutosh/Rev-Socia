@@ -1,0 +1,110 @@
+
+<div class = "container-fluid">
+  <div class ="btn-group float-right">
+    <button routerLink="/profile" class ="btn "> Profile</button>
+    <button routerLink="/home" class ="btn btn-primary"> Home</button>
+  </div>
+  <br/>
+
+  <h2> Welcome Admin </h2>
+
+  <div>
+
+
+    <ul class ="list-group">
+      <li class="list-group-item">
+        <div class="row">
+
+          <input [(ngModel)] = "username"
+            class = "col-2 form-control" placeholder="username" readonly = "readonly">
+
+          <input [(ngModel)] = "firstName"
+            class = "col-1 form-control" placeholder="firstName"/>
+
+          <input [(ngModel)] ="lastName"
+            class = "col-1 form-control" placeholder="lastName">
+
+          <input [(ngModel)] ="email"
+            class = "col-3 form-control" placeholder="email">
+
+          <input [(ngModel)] ="contact"
+            class = "col-2 form-control" placeholder="contact"type="number">
+
+          <select [(ngModel)] = "role"
+            class = "col-1">
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+          </select>
+          &nbsp;
+          <div class = "row col-2  icons">
+            <i (click)="createUser()"
+              class="fa fa-plus"></i>
+
+            <i (click)="updateUser()"
+              class="fa fa-check"></i>
+          </div>
+        </div>
+      </li>
+      <br/>
+
+      <li class ="list-group-item">
+        <div class="row">
+          <input placeholder="Search username" class = "col-6 form-control" [(ngModel)] = "searchName"/>
+          <div class ="icons"> <i class = "  col-2 fa fa-search"  (click)="searchUser()"></i></div>
+        </div>
+
+      </li>
+      <br/>
+      <h4 class="float-left">List of Users</h4>
+      <li class ="list-group-item active">
+        <div class = "row">
+          <div class = "col-4">
+            Username
+          </div>
+          <div class = "col-3">
+         Email
+          </div>
+          <div class = "col-2">
+         Contact
+          </div>
+          <div class = "col-1">
+         Role
+          </div>
+
+          <div class = "col-2">
+            Action
+          </div>
+        </div>
+      </li>
+      <li *ngFor = "let user of users"
+        class="list-group-item">
+        <div class = "row">
+          <div class ="col-4">
+        {{user.username}}
+          </div>
+
+          <div class ="col-3">
+            {{user.email}}
+          </div>
+
+          <div class ="col-2">
+            {{user.contact}}
+          </div>
+
+          <div class ="col-1">
+          {{user.role}}
+
+          </div>
+          <div class ="icons btn-group col-2 ">
+            <i (click) = "loadUser(user)"
+              class = "fa fa-pencil "></i>
+
+            <i (click)="deleteUser(user)"
+              class="fa fa-trash "></i>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+</div>
