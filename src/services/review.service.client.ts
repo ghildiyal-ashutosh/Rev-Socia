@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 
-//const REVIEW_API_URL = 'http://localhost:3000/api/review'
+// const REVIEW_API_URL = 'http://localhost:3000/api/review'
 const REVIEW_API_URL  = 'https://rev-socia-node-server.herokuapp.com/api/review'
 
 @Injectable ()

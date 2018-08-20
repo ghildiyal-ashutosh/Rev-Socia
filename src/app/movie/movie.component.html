@@ -1,0 +1,161 @@
+<div class="container-fluid">
+
+  <h2>Movie Search</h2>
+
+
+  <input class="form-control"
+         placeholder="Title"
+         [(ngModel)]="title"
+         name = "title1"/>
+
+  <input class="form-control"
+         placeholder="Year"
+         [(ngModel)]="year"
+         name = "year1"/>
+
+  <button class="btn btn-primary btn-block"
+          (click)="search(title, year)">
+    Search
+  </button>
+
+  <button class="btn btn-success btn-block"
+          (click)="findAllMovies()">
+    Recently Searched
+  </button>
+
+  <br/>
+
+
+  <div [hidden]="!movieStatus">
+    <h4>Search Results:</h4>
+    <table class="table table-responsive table-hover">
+      <thead>
+      <tr>
+        <td><b>Title</b></td>
+        <td><b>Year</b></td>
+        <td><b>Rated</b></td>
+        <td><b>Genre</b></td>
+        <td><b>Language</b></td>
+        <td><b>IMDb Rating</b></td>
+        <td><b>Hits</b></td>
+        <td><b>Action (Double-click)</b></td>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td>{{movie.Title}}</td>
+        <td>{{movie.Year}}</td>
+        <td>{{movie.Rated}}</td>
+        <td>{{movie.Genre}}</td>
+        <td>{{movie.Language}}</td>
+        <td>{{movie.imdbRating}}</td>
+        <td>{{movie.Hits}}</td>
+        <td><button class="btn btn-primary"
+                    (click)="showDetails(movie)">
+          Details
+        </button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div [hidden]="!searchStatus">
+    <h4>Search Results:</h4>
+    <table class="table table-responsive table-hover">
+      <thead>
+      <tr>
+        <td><b>Title</b></td>
+        <td><b>Year</b></td>
+        <td><b>Rated</b></td>
+        <td><b>Genre</b></td>
+        <td><b>Language</b></td>
+        <td><b>IMDb Rating</b></td>
+        <td><b>Hits</b></td>
+        <td><b>Action (Double-click)</b></td>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let movie of movies"
+          name="alpha">
+        <td>{{movie.Title}}</td>
+        <td>{{movie.Year}}</td>
+        <td>{{movie.Rated}}</td>
+        <td>{{movie.Genre}}</td>
+        <td>{{movie.Language}}</td>
+        <td>{{movie.imdbRating}}</td>
+        <td>{{movie.Hits}}</td>
+        <td><button class="btn btn-primary"
+                    (click)="showDetails(movie)">
+          Details
+        </button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div [hidden]="!detailsStatus">
+    <h4>Details:</h4>
+    <img src="{{movieDetails.Poster}}" alt="Poster link: {{movieDetails.Poster}}"/>
+    <table class="table table-responsive table-striped">
+      <thead>
+      <tr>
+        <td><b>Attributes</b></td>
+        <td><b>Values</b></td>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td><b>Title:</b></td>
+        <td>{{movieDetails.Title}}</td>
+      </tr>
+      <tr>
+        <td><b>Year:</b></td>
+        <td>{{movieDetails.Year}}</td>
+      </tr>
+      <tr>
+        <td><b>Rated:</b></td>
+        <td>{{movieDetails.Rated}}</td>
+      </tr>
+      <tr>
+        <td><b>Genre:</b></td>
+        <td>{{movieDetails.Genre}}</td>
+      </tr>
+      <tr>
+        <td><b>Actors:</b></td>
+        <td>{{movieDetails.Actors}}</td>
+      </tr>
+      <tr>
+        <td><b>Awards:</b></td>
+        <td>{{movieDetails.Awards}}</td>
+      </tr>
+      <tr>
+        <td><b>Language:</b></td>
+        <td>{{movieDetails.Language}}</td>
+      </tr>
+      <tr>
+        <td><b>IMDb Rating:</b></td>
+        <td>{{movieDetails.imdbRating}}</td>
+      </tr>
+      <tr>
+        <td><b>Plot:</b></td>
+        <td>{{movieDetails.Plot}}</td>
+      </tr>
+      <tr>
+        <td><b>Website:</b></td>
+        <td><a href="{{movieDetails.Website}}">{{movieDetails.Website}}</a></td>
+      </tr>
+      <tr>
+        <td><b>Hits:</b></td>
+        <td>{{movieDetails.Hits}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
