@@ -7,6 +7,7 @@ import {LoginComponent} from "./login/login.component";
 import {AdminComponent} from "./admin/admin.component";
 import {WorkComponent} from "./work/work.component";
 import {ReviewerProfileComponent} from "./reviewer-profile/reviewer-profile.component";
+import {SubmitReviewComponent} from "./submit-review/submit-review.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   {path: 'admin', component : AdminComponent},
   {path: 'work/:userId', component: WorkComponent},
   {path: 'reviewer/:userId', component: ReviewerProfileComponent},
+  {path: 'submitReview/work/:workId/reviewer/:reviewerId', component : SubmitReviewComponent},
   {path: '', redirectTo: 'home', pathMatch : 'full'}
 ];
 

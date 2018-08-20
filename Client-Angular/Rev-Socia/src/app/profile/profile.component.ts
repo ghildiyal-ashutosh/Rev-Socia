@@ -4,6 +4,7 @@ import {UserServiceClient} from "../../services/user.service.client";
 
 import {Router} from "@angular/router";
 import {WorkServiceClient} from "../../services/work.service.client";
+import {ReviewServiceClient} from "../../services/review.service.client";
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +14,7 @@ import {WorkServiceClient} from "../../services/work.service.client";
 export class ProfileComponent implements OnInit {
 
   user = {contact: 0, firstName:'',lastName:'',email: '',
-    interest:{field1: '', field2: '' ,field3: '', field4: ''}, role: '' , username: '' , _id: -1 };
+     role: '' , username: '' , _id: -1 };
 
   contact = 0;
   firstName = '';
@@ -24,10 +25,14 @@ export class ProfileComponent implements OnInit {
   adminStatus = false;
    userWork =  {works:[{title: '', timeStamp: '', points: 0}]};
 
+   workReviews = [{reviewer: {title: ''}, score: '', timeStamp: '', review: '', work:{title: ''}}];
+   viewReviews = true;
+
 
   constructor(private userService: UserServiceClient,
                private router: Router,
-              private workService: WorkServiceClient){ }
+              private workService: WorkServiceClient,
+              private reviewService: ReviewServiceClient){ }
 
 
   logout()
@@ -89,6 +94,14 @@ export class ProfileComponent implements OnInit {
     this.lastName = user.lastName;
    this.email =  user.email;
    }
+
+
+  findAllWorkReviews(work)
+  {
+    this.reviewService.findAllReviewsForWork(work._id)
+      .then((response) => this.workReviews = response);
+    this.viewReviews = false;
+  }
 
 
   ngOnInit() {

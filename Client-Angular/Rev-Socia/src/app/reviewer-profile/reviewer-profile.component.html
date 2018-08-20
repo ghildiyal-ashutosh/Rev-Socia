@@ -1,11 +1,13 @@
-<div class ="container-fluid">
+<div class ="container">
+  <button routerLink="profile" class =" btn float-left"> Profile</button>
 <br/>
+  <br/>
   <input class ="form-control col-2 float-right" readonly = "readonly" id ="coins" value = "crypto: {{user.crypto}}"/>
 
 
   <h4> Reviewer's Profile : {{reviewer.title}}</h4>
   <br/>
-  <input class ="form-control col-2 float-right" readonly = "readonly" id ="rating" value = "rating: {{reviewer.rating}}"/>
+  <input class ="form-control col-2 float-right" readonly = "readonly" id ="rating" value = "upvotes: {{reviewer.rating}}"/>
   <br/>
 
   <div [hidden] = "reviewerStatus">
@@ -29,7 +31,8 @@
 
 
 
-    <div class ="row" [hidden]="!reviewerStatus">
+    <div  [hidden]="!reviewerStatus">
+      <div class = "row">
 
   <ul
     class ="list-group col-8 ">
@@ -59,21 +62,22 @@
     <br/>
     <button (click)="updateFields()" class ="btn btn-primary form-control float-right"> Update</button>
     <br/>
-    
+
   </div>
+    </div>
 
-
+<br/>
       <h4> List of available work for review</h4>
+      <br/>
+
       <table class =" table table-responsive table-striped">
-        <thead class ="thead-light">
+        <thead>
         <tr>
           <th>
             Title
           </th>
-          <th> Crypto Rewards</th>
           <th> Category</th>
-          <th>Rubric</th>
-          <th> Description</th>
+          <th> Action</th>
 
         </tr>
         </thead>
@@ -81,13 +85,54 @@
 
         <tr *ngFor = "let work of availableWork">
           <td>{{work.title}}</td>
-          <td>{{work.points}}</td>
           <td> {{work.category}}</td>
-          <td> {{work.rubric}}</td>
-          <td>{{work.description}}</td>
+          <td><button class="btn btn-success"
+            routerLink="/submitReview/work/{{work._id}}/reviewer/{{reviewer._id}}">
+            Evaluate
+          </button>
+          </td>
+          <td></td>
         </tr>
         </tbody>
+        <br/>
+        <br/>
       </table>
+
+
+<h4> List of Work Reviewed By You</h4>
+      <ul class ="list-group">
+          <li class="list-group-item active ">
+            <div class = "row">
+              <div class ="col-2">
+                Work
+              </div>
+              <div class ="col-2">
+                Score (max = 5)
+              </div>
+              <div class ="col-2">
+               Category
+              </div>
+              <div class ="col-6">
+                Time
+              </div>
+              </div>
+            </li>
+        <br/>
+
+
+          <li  class ="list-group-item"
+             *ngFor = "let review of reviewedWork">
+            <div class ="row">
+            <div class = "col-2">{{review.work.title}} </div>
+            <div class ="col-2"> {{review.score}}
+            </div>
+            <div class ="col-2"> {{review.work.category}}</div>
+            <td class ="col-6"> {{review.timeStamp}}</td>
+            </div>
+          </li>
+
+          </ul>
+
     </div>
 
 

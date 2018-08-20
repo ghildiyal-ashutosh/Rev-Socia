@@ -17,6 +17,8 @@ points = '';
 description = '';
 rubric  =  '';
 
+workReviews = [{reviewer: {title: ''} , timeStamp: '' , score: '', review: ''}]
+
 
   constructor(private userService: UserServiceClient,
               private activatedRoute: ActivatedRoute,
@@ -25,11 +27,10 @@ rubric  =  '';
               createWork()
               {
                 if ((this.title !== null && this.title !== '')
-                  && (this.category !== null && this.category !== '')
-                  && (this.points !== '' && this.points !== null))
+                  && (this.category !== null && this.category !== ''))
                 {
                 const work = {title: this.title, category: this.category,
-                  points: this.points,
+                  points: 0,
                   description:this.description,
                 rubric: this.rubric}
                 console.log(work);

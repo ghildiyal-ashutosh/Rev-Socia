@@ -14,6 +14,8 @@ import { WorkComponent } from './work/work.component';
 import {WorkServiceClient} from "../services/work.service.client";
 import { ReviewerProfileComponent } from './reviewer-profile/reviewer-profile.component';
 import {ReviewerServiceClient} from "../services/reviewer.service.client";
+import { SubmitReviewComponent } from './submit-review/submit-review.component';
+import {ReviewServiceClient} from "../services/review.service.client";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {ReviewerServiceClient} from "../services/reviewer.service.client";
     LoginComponent,
     AdminComponent,
     WorkComponent,
-    ReviewerProfileComponent
+    ReviewerProfileComponent,
+    SubmitReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import {ReviewerServiceClient} from "../services/reviewer.service.client";
   providers: [
     UserServiceClient,
     WorkServiceClient,
-    ReviewerServiceClient
+    ReviewerServiceClient,
+    ReviewServiceClient
   ],
   bootstrap: [AppComponent]
 })

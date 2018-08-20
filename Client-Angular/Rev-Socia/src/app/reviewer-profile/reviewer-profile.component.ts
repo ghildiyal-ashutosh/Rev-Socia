@@ -3,6 +3,7 @@ import {ReviewerServiceClient} from "../../services/reviewer.service.client";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserServiceClient} from "../../services/user.service.client";
 import {WorkServiceClient} from "../../services/work.service.client";
+import {ReviewServiceClient} from "../../services/review.service.client";
 
 @Component({
   selector: 'app-reviewer-profile',
@@ -12,19 +13,20 @@ import {WorkServiceClient} from "../../services/work.service.client";
 export class ReviewerProfileComponent implements OnInit {
 
   title = '';
-
+reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
  fields = [];
  fields2 = [];
- user = {crypto: ''}
+ user = {crypto: '', reviewer: {_id:''}, works: []}
  reviewer = {title: '', fields: [], reviewed: '', rating: '', _id: ''};
  reviewerStatus = false;
- availableWork = [{title:'' , points: '', description: '', category: '', rubric: ''}];
+ availableWork = [{title:'' , points: '', description: '', category: '', rubric: '' ,_id: ''}];
 
   constructor(private reviewerService: ReviewerServiceClient,
               private activatedRoute: ActivatedRoute,
               private  userService: UserServiceClient,
               private router: Router,
-              private workService: WorkServiceClient) { }
+              private workService: WorkServiceClient,
+              private reviewService: ReviewServiceClient) { }
 
   createReviewer()
   {
@@ -63,14 +65,7 @@ export class ReviewerProfileComponent implements OnInit {
             . then((reviewer) => this.reviewer = reviewer);
           alert("Fields updated");
 
-          this.workService.findAllWork()
-            .then((response) => {
-              this.availableWork =
-                response.filter((work) => {
-                  if (this.reviewer.fields.indexOf(work.category) !== -1) {
-                    return work;
-                  }});
-            });
+        this.findWork();
 
 
 
@@ -78,6 +73,29 @@ export class ReviewerProfileComponent implements OnInit {
     }
 
 
+  }
+
+
+  findAllReviewedWork()
+  {
+    this.reviewService.findAlldReviewsForReviewer(this.reviewer._id)
+      .then((response) => this.reviewedWork = response);
+  }
+
+
+  findWork()
+  {
+    this.workService.findAllWork()
+      .then((response) => {
+        this.availableWork =
+          response.filter((work) => {
+            if ((this.reviewer.fields.indexOf(work.category) !== -1) &&
+              (this.user.works.indexOf(work._id) === -1) ) {
+              console.log(this.user.works.indexOf(work._id));
+              console.log(this.user, work._id);
+              return work;
+            }});
+      });
   }
 
   deleteField(field)
@@ -88,14 +106,7 @@ export class ReviewerProfileComponent implements OnInit {
           .then((reviewer) =>
           {
             this.reviewer = reviewer;
-            this.workService.findAllWork()
-              .then((response) => {
-                this.availableWork =
-                  response.filter((work) => {
-                    if (this.reviewer.fields.indexOf(work.category) !== -1) {
-                      return work;
-                    }});
-              });
+          this.findWork();
 
           });
       });
@@ -111,29 +122,30 @@ export class ReviewerProfileComponent implements OnInit {
       this.userService.findCurrentUser()
         .then((response) => {
         if (response.username !== "-1") {
-                   this.user = response;
-          if (response.reviewer._id !== null) {
-            this.reviewerStatus = true;
-            this.reviewerService.findReviewerById(response.reviewer)
-              .then((response) => this.reviewer = response);
-
-
-            this.workService.findAllWork()
-                .then((response) => {
-                  this.availableWork =
-                    response.filter((work) => {
-                      if (this.reviewer.fields.indexOf(work.category) !== -1) {
-                        return work;
-                      }});
-                });
-            }
-            }
+          this.user = response;
+        }
         else {
           alert('No User Logged In');
           this.router.navigate(['home']);
         }
 
-      })
-  }
 
-}
+
+
+        if (this.user.reviewer._id !== null) {
+            this.reviewerStatus = true;
+            this.reviewerService.findReviewerById(this.user.reviewer)
+              .then((response) =>
+              {
+                this.reviewer = response;
+                this.findWork();
+
+                this.findAllReviewedWork()
+
+                });
+            }})
+
+
+
+            }}
+
