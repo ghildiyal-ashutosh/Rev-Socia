@@ -17,7 +17,7 @@ reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
  fields = [];
  fields2 = [];
  user = {crypto: '', reviewer: {_id  :  ''}, works: [] , username: ''}
- reviewer = {title: '', fields: [], reviewed: '', rating: '', _id: ''};
+ reviewer = {title: '', fields: [], reviewed: [], rating: '', _id: ''};
  reviewerStatus = false;
  availableWork = [{title:'' , points: '', description: '', category: '', rubric: '' ,_id: ''}];
 
@@ -91,7 +91,9 @@ reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
         this.availableWork =
           response.filter((work) => {
             if ((this.reviewer.fields.indexOf(work.category) !== -1) &&
-              (this.user.works.indexOf(work._id) === -1) ) {
+              (this.user.works.indexOf(work._id) === -1) &&
+                  (this.reviewer.reviewed.indexOf(work._id === -1)) ) {
+                console.log(this.reviewer.reviewed)
                 return work;
             }});
       });
