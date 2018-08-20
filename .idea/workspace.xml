@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aef0d01-c9c1-4e7c-b9fb-ab46d75b2838" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="0aef0d01-c9c1-4e7c-b9fb-ab46d75b2838" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -70,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reviewer-profile.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reviewer-profile.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1941">
@@ -82,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profile.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1845">
-              <caret line="123" selection-start-line="123" selection-end-line="123" />
+            <state relative-caret-position="481">
+              <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -184,12 +182,12 @@
         <option value="$PROJECT_DIR$/src/services/review.service.client.ts" />
         <option value="$PROJECT_DIR$/src/services/movie.service.client.ts" />
         <option value="$PROJECT_DIR$/src/app/movie/movie.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/profile/profile.component.ts" />
         <option value="$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.html" />
         <option value="$PROJECT_DIR$/src/app/profile/profile.component.html" />
         <option value="$PROJECT_DIR$/src/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/src/app/submit-review/submit-review.component.ts" />
         <option value="$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/profile/profile.component.ts" />
       </list>
     </option>
   </component>
@@ -346,12 +344,12 @@
       <updated>1534495245114</updated>
       <workItem from="1534495249110" duration="136570000" />
       <workItem from="1534745834996" duration="8385000" />
-      <workItem from="1534763306988" duration="1535000" />
+      <workItem from="1534763306988" duration="1702000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146490000" />
+    <option name="totallyTimeSpent" value="146657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -542,16 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1845">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -590,6 +578,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1941">
           <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
