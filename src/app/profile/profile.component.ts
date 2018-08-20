@@ -110,21 +110,16 @@ export class ProfileComponent implements OnInit {
         if(response.username !== '-1') {
           this.user = response;
           this.assignValues(this.user);
+
+            this.workService.findWorkForUser()
+                .then((work) => {
+                    this.userWork = work});
           }
         else {
           alert('No User Logged In');
           this.router.navigate(['home']);
         }
       });
-
-
-      this.workService.findWorkForUser()
-          .then((work) => {
-              this.userWork = work
-
-
-          });
-
     }
 
 }
