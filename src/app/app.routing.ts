@@ -19,7 +19,7 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'admin', component : AdminComponent},
   {path: 'work/:userId', component: WorkComponent},
-  {path: 'reviewer/:userId', component: ReviewerProfileComponent},
+  {path: 'reviewer/profile', component: ReviewerProfileComponent},
   {path: 'submitReview/work/:workId/reviewer/:reviewerId', component : SubmitReviewComponent},
     {path: 'movie', component : MovieComponent},
   {path: '', redirectTo: 'home', pathMatch : 'full'}

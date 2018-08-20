@@ -91,9 +91,7 @@ reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
           response.filter((work) => {
             if ((this.reviewer.fields.indexOf(work.category) !== -1) &&
               (this.user.works.indexOf(work._id) === -1) ) {
-              console.log(this.user.works.indexOf(work._id));
-              console.log(this.user, work._id);
-              return work;
+                return work;
             }});
       });
   }

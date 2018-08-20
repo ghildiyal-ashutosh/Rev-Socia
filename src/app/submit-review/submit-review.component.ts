@@ -40,7 +40,7 @@ export class SubmitReviewComponent implements OnInit {
                   this.reviewService.createReview(review)
                     .then((response) => {
                       alert("Review Submitted Successfully")
-                      this.router.navigate ([`reviewer/${this.user._id}`]);
+                      this.router.navigate (['reviewer/profile']);
                     })
 
                 }
