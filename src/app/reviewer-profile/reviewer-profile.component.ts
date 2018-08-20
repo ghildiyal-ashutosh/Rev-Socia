@@ -92,8 +92,8 @@ reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
           response.filter((work) => {
             if ((this.reviewer.fields.indexOf(work.category) !== -1) &&
               (this.user.works.indexOf(work._id) === -1) &&
-                  (this.reviewer.reviewed.indexOf(work._id === -1)) ) {
-                console.log(this.reviewer.reviewed)
+                  (this.reviewer.reviewed.indexOf(work._id) === -1)) {
+                console.log(this.reviewer.reviewed, work._id)
                 return work;
             }});
       });
@@ -126,7 +126,6 @@ reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
                   .then( (response) => {
                       this.user = response;
                       if (this.user.reviewer._id !== "-1") {
-                          console.log(this.user.reviewer._id)
                           this.reviewerStatus = true;
                           this.reviewerService.findReviewerById(this.user.reviewer)
                               .then((response) =>
