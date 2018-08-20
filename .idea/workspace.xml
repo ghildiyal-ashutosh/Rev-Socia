@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aef0d01-c9c1-4e7c-b9fb-ab46d75b2838" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/services/movie.service.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/movie.service.client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/movie/movie.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/movie/movie.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie.service.client.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="movie.service.client.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/movie.service.client.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -34,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="movie.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/movie/movie.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1079">
-              <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+            <state relative-caret-position="659">
+              <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -171,12 +171,12 @@
         <option value="$PROJECT_DIR$/src/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/src/app/home-page/home-page.component.html" />
         <option value="$PROJECT_DIR$/src/app/movie/movie.component.html" />
-        <option value="$PROJECT_DIR$/src/app/movie/movie.component.ts" />
         <option value="$PROJECT_DIR$/src/services/work.service.client.ts" />
         <option value="$PROJECT_DIR$/src/services/user.service.client.ts" />
         <option value="$PROJECT_DIR$/src/services/reviewer.service.client.ts" />
         <option value="$PROJECT_DIR$/src/services/review.service.client.ts" />
         <option value="$PROJECT_DIR$/src/services/movie.service.client.ts" />
+        <option value="$PROJECT_DIR$/src/app/movie/movie.component.ts" />
       </list>
     </option>
   </component>
@@ -304,12 +304,12 @@
       <option name="presentableId" value="Default" />
       <updated>1534495245114</updated>
       <workItem from="1534495249110" duration="136570000" />
-      <workItem from="1534745834996" duration="5379000" />
+      <workItem from="1534745834996" duration="6096000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141949000" />
+    <option name="totallyTimeSpent" value="142666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -459,16 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/movie/movie.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1079">
-          <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/work.service.client.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -501,6 +491,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/movie/movie.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

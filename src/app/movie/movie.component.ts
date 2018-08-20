@@ -53,12 +53,14 @@ export class MovieComponent implements OnInit {
             this.movieService.findMovieByTitle(title)
                 .then((response) => {
                     if (response.Title === '-1') {
+                      this.title = '';
                         this.fetchMovie(movie);
                     }
                     else {
                         console.log(response);
                         this.movieStatus = true;
                         this.movie = response;
+                        this.title = '';
                     }
                 });
         }
