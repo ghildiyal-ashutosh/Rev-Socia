@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +28,6 @@
     "font-awesome": "^4.7.0",
     "path": "^0.12.7",
     "rxjs": "^6.0.0",
-    "typescript": "~2.7.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
