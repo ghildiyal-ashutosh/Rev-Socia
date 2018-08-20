@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aef0d01-c9c1-4e7c-b9fb-ab46d75b2838" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/services/movie.service.client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home-page/home-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home-page/home-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/review.service.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/review.service.client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/work.service.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/work.service.client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/movie.service.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/movie.service.client.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +28,8 @@
       <file leaf-file-name="movie.service.client.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/movie.service.client.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="75">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -312,15 +304,16 @@
       <option name="presentableId" value="Default" />
       <updated>1534495245114</updated>
       <workItem from="1534495249110" duration="136570000" />
-      <workItem from="1534745834996" duration="4987000" />
+      <workItem from="1534745834996" duration="5379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141557000" />
+    <option name="totallyTimeSpent" value="141949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3309859" />
@@ -506,8 +499,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/movie.service.client.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="75">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
         </state>
       </provider>
     </entry>

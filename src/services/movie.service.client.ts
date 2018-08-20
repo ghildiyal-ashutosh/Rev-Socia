@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 // const MOVIE_API = 'http://localhost:3000/api/movie';
 const MOVIE_API =  'https://rev-socia-node-server.herokuapp.com/api/movie';
 
-const API_MOVIE_URL = 'http://www.omdbapi.com/?apikey=a272f8ec&t=title&y=year&plot=full';
+const API_MOVIE_URL = 'https://www.omdbapi.com/?apikey=a272f8ec&t=title&y=year&plot=full';
 
 
 @Injectable()
