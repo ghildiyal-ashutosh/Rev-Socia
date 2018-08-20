@@ -17,8 +17,7 @@ export class RegisterComponent implements OnInit {
   password = '';
   password2 = '';
   contact = '';
-  works = [];
-  reviewer = {_id : -1};
+
 
 
 
@@ -54,6 +53,8 @@ export class RegisterComponent implements OnInit {
             var contact = this.contact;
             var role  = 'User';
             var crypto  = 500;
+            var works = [];
+            var reviewer = {_id: "-1"}
 
 
             const user = {
@@ -65,8 +66,8 @@ export class RegisterComponent implements OnInit {
               contact: contact,
               role: role,
              crypto: crypto,
-                works: this.works,
-                reviewer: this.reviewer
+                works: works,
+                reviewer: reviewer
             };
 
             this.userService.registerUser(user)
@@ -83,17 +84,20 @@ export class RegisterComponent implements OnInit {
     }
 
 
-    else if (password === '')
-    message = 'Password cant be empty';
+    else if (password === '') {
+        message = 'Password cant be empty';
+        alert(message);
+    }
 
-  else if(password !== password2)
-    message = 'password mismtach';
+  else if(password !== password2) {
+        message = 'password mismtach';
+        alert(message);
+    }
 
-    else if (username === '')
-      message = "username can't not be empty";
-
-    alert(message);
-
+    else if (username === '') {
+        message = "username can't not be empty";
+        alert(message);
+    }
 
     }
 

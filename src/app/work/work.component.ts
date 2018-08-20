@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserServiceClient} from "../../services/user.service.client";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {WorkServiceClient} from "../../services/work.service.client";
 
 @Component({
@@ -22,7 +22,8 @@ workReviews = [{reviewer: {title: ''} , timeStamp: '' , score: '', review: ''}]
 
   constructor(private userService: UserServiceClient,
               private activatedRoute: ActivatedRoute,
-              private workService : WorkServiceClient) { }
+              private workService : WorkServiceClient,
+               private router: Router) { }
 
               createWork()
               {
@@ -45,9 +46,17 @@ workReviews = [{reviewer: {title: ''} , timeStamp: '' , score: '', review: ''}]
 
   ngOnInit() {
 
-    this.activatedRoute.params.subscribe(
-      params => this.userService.findUserById(params['userId'])
-        .then((user) => this.user = user));
+    this.userService.findCurrentUser()
+        .then((response) => {
+            if(response.username !== '-1')
+            {
+                this.user = response;
+            }
+            else{
+                alert("No user logged in")
+                this.router.navigate(['home']);
+            }
+        })
   }
 
 }

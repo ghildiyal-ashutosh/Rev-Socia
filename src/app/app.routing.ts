@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'login', component: LoginComponent},
   {path: 'admin', component : AdminComponent},
-  {path: 'work/:userId', component: WorkComponent},
+  {path: 'work/createWork', component: WorkComponent},
   {path: 'reviewer/profile', component: ReviewerProfileComponent},
   {path: 'submitReview/work/:workId/reviewer/:reviewerId', component : SubmitReviewComponent},
     {path: 'movie', component : MovieComponent},
