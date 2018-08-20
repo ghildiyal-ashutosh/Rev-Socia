@@ -17,6 +17,8 @@ export class RegisterComponent implements OnInit {
   password = '';
   password2 = '';
   contact = '';
+  works = [];
+  reviewer = {_id : -1};
 
 
 
@@ -62,7 +64,9 @@ export class RegisterComponent implements OnInit {
               email: email,
               contact: contact,
               role: role,
-             crypto: crypto
+             crypto: crypto,
+                works: this.works,
+                reviewer: this.reviewer
             };
 
             this.userService.registerUser(user)

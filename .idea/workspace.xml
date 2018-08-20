@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aef0d01-c9c1-4e7c-b9fb-ab46d75b2838" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/app/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/register.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -16,18 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="movie.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/movie/movie.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="reviewer-profile.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,11 +50,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reviewer-profile.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reviewer-profile.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="124" column="31" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="31" />
+            <state relative-caret-position="334">
+              <caret line="124" column="45" selection-start-line="124" selection-start-column="45" selection-end-line="124" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/register/register.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -135,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Client-Angular/Rev-Socia/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/Client-Angular/Rev-Socia/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/Client-Angular/Rev-Socia/src/index.html" />
         <option value="$PROJECT_DIR$/Client-Angular/Rev-Socia/src/app/model/user.model.client.ts" />
@@ -186,6 +186,7 @@
         <option value="$PROJECT_DIR$/src/app/submit-review/submit-review.component.ts" />
         <option value="$PROJECT_DIR$/src/app/profile/profile.component.ts" />
         <option value="$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/register/register.component.ts" />
       </list>
     </option>
   </component>
@@ -342,12 +343,12 @@
       <updated>1534495245114</updated>
       <workItem from="1534495249110" duration="136570000" />
       <workItem from="1534745834996" duration="8385000" />
-      <workItem from="1534763306988" duration="3097000" />
+      <workItem from="1534763306988" duration="3739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148052000" />
+    <option name="totallyTimeSpent" value="148694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -408,7 +409,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Client-Angular/Rev-Socia/src/app/login/login.component.ts" />
     <entry file="file://$PROJECT_DIR$/Client-Angular/Rev-Socia/src/app/admin/admin.component.ts" />
     <entry file="file://$PROJECT_DIR$/Client-Angular/Rev-Socia/src/app/admin/admin.component.css" />
     <entry file="file://$PROJECT_DIR$/Client-Angular/Rev-Socia/src/app/admin/admin.component.html" />
@@ -586,8 +586,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/reviewer-profile/reviewer-profile.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="124" column="31" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="31" />
+        <state relative-caret-position="334">
+          <caret line="124" column="45" selection-start-line="124" selection-start-column="45" selection-end-line="124" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/register/register.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
