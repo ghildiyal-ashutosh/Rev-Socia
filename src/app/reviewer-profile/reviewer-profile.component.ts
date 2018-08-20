@@ -123,7 +123,8 @@ reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
               this.userService.findUserById(params['userId'])
                   .then( (response) => {
                       this.user = response;
-                      if (this.user.reviewer._id ! == "-1") {
+                      if (this.user.reviewer._id !== "-1") {
+                          console.log(this.user.reviewer._id)
                           this.reviewerStatus = true;
                           this.reviewerService.findReviewerById(this.user.reviewer)
                               .then((response) =>
