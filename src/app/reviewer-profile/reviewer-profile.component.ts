@@ -121,29 +121,25 @@ reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
         .then((response) => {
         if (response.username !== "-1") {
           this.user = response;
+
+            if (this.user.reviewer._id !== null) {
+                this.reviewerStatus = true;
+                this.reviewerService.findReviewerById(this.user.reviewer)
+                    .then((response) =>
+                    {
+                        this.reviewer = response;
+                        this.findWork();
+
+                        this.findAllReviewedWork()
+
+                    });
+            }
+
+
         }
         else {
           alert('No User Logged In');
           this.router.navigate(['home']);
         }
-
-
-
-
-        if (this.user.reviewer._id !== null) {
-            this.reviewerStatus = true;
-            this.reviewerService.findReviewerById(this.user.reviewer)
-              .then((response) =>
-              {
-                this.reviewer = response;
-                this.findWork();
-
-                this.findAllReviewedWork()
-
-                });
-            }})
-
-
-
-            }}
+        })}}
 
