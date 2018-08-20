@@ -11,6 +11,7 @@ import {SubmitReviewComponent} from "./submit-review/submit-review.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
+    {path: '', component: HomePageComponent},
   {path: 'home' , component:  HomePageComponent},
   {path: 'registerUser', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent},
