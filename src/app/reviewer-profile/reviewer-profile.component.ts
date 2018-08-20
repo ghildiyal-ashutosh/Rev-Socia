@@ -16,7 +16,7 @@ export class ReviewerProfileComponent implements OnInit {
 reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
  fields = [];
  fields2 = [];
- user = {crypto: '', reviewer: {_id  :  ''}, works: []}
+ user = {crypto: '', reviewer: {_id  :  ''}, works: [] , username: ''}
  reviewer = {title: '', fields: [], reviewed: '', rating: '', _id: ''};
  reviewerStatus = false;
  availableWork = [{title:'' , points: '', description: '', category: '', rubric: '' ,_id: ''}];
@@ -118,30 +118,40 @@ reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
 
   ngOnInit() {
 
-      this.userService.findCurrentUser()
-        .then((response) => {
-        if (response.username !== "-1") {
-          this.user = response;
+      this.activatedRoute.params.subscribe(
+          params => {
+              this.userService.findUserById(params['userId'])
+                  .then( (response) => {
+                      this.user = response;
+                      if (this.user.reviewer._id ! == "-1") {
+                          this.reviewerStatus = true;
+                          this.reviewerService.findReviewerById(this.user.reviewer)
+                              .then((response) =>
+                              {
+                                  this.reviewer = response;
+                                  this.findWork();
 
-            if (this.user.reviewer._id !== "-1") {
-                console.log(this.user.reviewer);
-                this.reviewerStatus = true;
-                this.reviewerService.findReviewerById(this.user.reviewer)
-                    .then((response) =>
-                    {
-                        this.reviewer = response;
-                        this.findWork();
+                                  this.findAllReviewedWork()
 
-                        this.findAllReviewedWork()
+                              });
+                      }
+                      })
 
-                    });
-            }
+              if (this.user.username === "-1" ){
+                  alert('No User Logged In');
+                  this.router.navigate(['home']);
+              }
+
+                      })
+
+      }
+}
 
 
-        }
-        else {
-          alert('No User Logged In');
-          this.router.navigate(['home']);
-        }
-        })}}
+
+
+
+
+
+
 

@@ -40,7 +40,7 @@ export class SubmitReviewComponent implements OnInit {
                   this.reviewService.createReview(review)
                     .then((response) => {
                       alert("Review Submitted Successfully")
-                      this.router.navigate (['reviewer/profile']);
+                      this.router.navigate ([`reviewer/${this.user._id}`]);
                     })
 
                 }
@@ -62,18 +62,17 @@ export class SubmitReviewComponent implements OnInit {
 
         this.reviewerId = params['reviewerId'];
 
+          this.userService.findCurrentUser()
+              .then((response) => {
+                  if (response.username === "-1") {
+
+                      alert('No user logged in currently !!!');
+                      this.router.navigate(['home']);
+                  }
+                  else
+                      this.user = response
+              })
+
       })
-
-    this.userService.findCurrentUser()
-      .then((response) => {
-        if (response.username === "-1") {
-
-          alert('No user logged in currently !!!');
-          this.router.navigate(['home']);
-        }
-        else
-          this.user = response
-      })
-
-}
+  }
 }
