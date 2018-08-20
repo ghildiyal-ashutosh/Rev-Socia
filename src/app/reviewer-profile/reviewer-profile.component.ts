@@ -122,7 +122,7 @@ reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
         if (response.username !== "-1") {
           this.user = response;
 
-            if (this.user.reviewer !== null) {
+            if ( undefined == this.user.reviewer._id) {
                 console.log(this.user.reviewer);
                 this.reviewerStatus = true;
                 this.reviewerService.findReviewerById(this.user.reviewer)
