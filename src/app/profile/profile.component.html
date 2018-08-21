@@ -128,9 +128,10 @@
     <li class ="list-group-item active">
       <div class = "row">
         <div class = "col-2"> Reviewer </div>
-        <div class = "col-2"> Score </div>
+        <div class = "col-1"> Score </div>
         <div class = "col-4"> Date & Time </div>
         <div class = "col-4"> Reviews </div>
+        <div class="col-1">Upvote</div>
       </div>
     </li>
     <li *ngFor="let review of workReviews"
@@ -138,13 +139,22 @@
       <div class = "row">
 
         <div class = "col-2"> {{review.reviewer.title}} </div>
-      <div class = "col-2"> {{review.score}}</div>
+      <div class = "col-1"> {{review.score}}</div>
       <div class = "col-4"> {{review.timeStamp}} </div>
-      <div class = "col-4"> {{review.review}} </div>
-
+      <div class = "col-4"> <button class="btn btn-primary"
+              (click)="seeReview(review)"> See Review
+      </button>
+      </div>
       </div>
 
     </li>
   </ul>
+  </div>
+
+  <div [hidden]="detailReview">
+    <br/>
+    <h3>Detailed Review</h3>
+    <p> {{this.review.review}}</p>
+    <br/>
   </div>
 </div>

@@ -29,6 +29,10 @@ export class ProfileComponent implements OnInit {
    viewReviews = true;
 
 
+   review = {review: ''};
+   detailReview = true;
+
+
   constructor(private userService: UserServiceClient,
                private router: Router,
               private workService: WorkServiceClient,
@@ -101,6 +105,17 @@ export class ProfileComponent implements OnInit {
     this.reviewService.findAllReviewsForWork(work._id)
       .then((response) => this.workReviews = response);
     this.viewReviews = false;
+  }
+
+  upvote(review){
+      console.log(review);
+  }
+
+
+  seeReview(review)
+  {
+      this.review = review;
+      this.detailReview = false;
   }
 
 
