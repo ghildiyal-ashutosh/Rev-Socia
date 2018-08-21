@@ -16,7 +16,7 @@ export class ReviewerProfileComponent implements OnInit {
 reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
  fields = [];
  fields2 = [];
- user = {crypto: '', reviewer: {_id  :  ''}, works: [] , username: ''}
+ user = {crypto: '', reviewer: {title :  ''}, works: [] , username: ''}
  reviewer = {title: '', fields: [], reviewed: [], rating: '', _id: ''};
  reviewerStatus = false;
  availableWork = [{title:'' , points: '', description: '', category: '', rubric: '' ,_id: ''}];
@@ -125,7 +125,7 @@ reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
               this.userService.findUserById(params['userId'])
                   .then( (response) => {
                       this.user = response;
-                      if (this.user.reviewer._id !== "-1") {
+                      if (this.user.reviewer.title !== "-1") {
                           this.reviewerStatus = true;
                           this.reviewerService.findReviewerById(this.user.reviewer)
                               .then((response) =>

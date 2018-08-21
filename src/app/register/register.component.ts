@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
             var role  = 'User';
             var crypto  = 500;
             var works = [];
-            var reviewer = {_id: "-1"}
+            var reviewer = {title: "-1"}
 
 
             const user = {

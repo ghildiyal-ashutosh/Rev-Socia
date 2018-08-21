@@ -64,7 +64,7 @@ export class ProfileComponent implements OnInit {
                   lastName:this.lastName,
                   email:this.email,
                   contact:this.contact,
-                  role: this.role, _id: this._id}
+                  role: this.role}
 
                    console.log(user);
 
