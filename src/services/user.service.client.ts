@@ -1,5 +1,5 @@
 // const USER_API_URL = 'http://localhost:3000/api/user'
-const USER_API_URL = 'https://rev-socia-node-server.herokuapp.com/api/user'
+ const USER_API_URL = 'https://rev-socia-node-server.herokuapp.com/api/user'
 import {Injectable} from "@angular/core";
 
 @Injectable ()
@@ -95,5 +95,15 @@ export class UserServiceClient {
     }).then((response) => response.json())
   }
 
+  updateByAdmin(user){
+    return fetch((USER_API_URL + '/updateByAdmin' ),{
+      credentials: 'include',
+        body: JSON.stringify(user),
+        headers:{
+        'content-type' : 'application/json'
+        },
+        method: 'PUT'
+    }).then((response) => response.json())
+}
 
 }

@@ -41,7 +41,7 @@ export class AdminComponent implements OnInit {
 
       console.log(user);
 
-      this.userService.updateUser(user)
+      this.userService.updateByAdmin(user)
         .then(() => {
           this._id = -1;
           this.firstName = "";

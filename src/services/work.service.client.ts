@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 
-// const WORK_API_URL = 'http://localhost:3000/api/work'
+ //const WORK_API_URL = 'http://localhost:3000/api/work'
 
- const WORK_API_URL = 'https://rev-socia-node-server.herokuapp.com/api/work'
+const WORK_API_URL = 'https://rev-socia-node-server.herokuapp.com/api/work'
 
 Injectable ()
 

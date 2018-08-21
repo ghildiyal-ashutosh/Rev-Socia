@@ -128,10 +128,10 @@
     <li class ="list-group-item active">
       <div class = "row">
         <div class = "col-2"> Reviewer </div>
-        <div class = "col-1"> Score </div>
+        <div class = "col-2"> Score </div>
         <div class = "col-4"> Date & Time </div>
         <div class = "col-4"> Reviews </div>
-        <div class="col-1">Upvote</div>
+
       </div>
     </li>
     <li *ngFor="let review of workReviews"
@@ -153,6 +153,7 @@
 
   <div [hidden]="detailReview">
     <br/>
+    <
     <h3>Detailed Review</h3>
     <p> {{this.review.review}}</p>
     <br/>
