@@ -13,7 +13,7 @@ import {ReviewServiceClient} from "../../services/review.service.client";
 export class ReviewerProfileComponent implements OnInit {
 
   title = '';
-reviewedWork = [{timeStamp: '', work: {title: '', category: ''} , score: '', }];
+reviewedWork = [{timeStamp: '', work: {title: '', category: '', points:'' } , score: '', }];
  fields = [];
  fields2 = [];
  user = {crypto: '', reviewer: {title :  ''}, works: [] , username: ''}

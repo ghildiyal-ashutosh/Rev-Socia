@@ -38,7 +38,8 @@
  <br/>
    <br/>
   </div>
-  <button class ="btn btn-success btn-block" (click)="submitReview()"> Submit Review </button>
+  <button [hidden]="submitStatus"
+          class ="btn btn-success btn-block" (click)="submitReview()"> Submit Review </button>
 <br/>
 
 </div>

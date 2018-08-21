@@ -28,10 +28,21 @@
     <option value = "Algorithm"> Algorithms</option>
     <option value = "Mathematics"> Mathematics</option>
   </select>
+</div>
+
+  <div>
+    <br/>
+    <label for = "points">Crypto Rewards *should be less than total cryptos in your wallet</label>
+    <input [(ngModel)] = "points" class="form-control"
+           id = "points" placeholder ="crypto points you are willing to spend"  type="number"/>
+  </div>
 
 
 
-    <div>
+
+
+
+  <div>
     <label for = "rubric">Rubric</label>
     <textarea [(ngModel)] = "rubric" class="form-control"
                 id = "rubric" placeholder="Any key points you want reviewer to focus" ></textarea>

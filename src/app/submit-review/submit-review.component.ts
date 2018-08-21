@@ -13,6 +13,7 @@ import {ReviewServiceClient} from "../../services/review.service.client";
 })
 export class SubmitReviewComponent implements OnInit {
 
+    submitStatus = false;
   reviewerId = '';
   workId = '';
   work = {title:'', description: '' ,rubric: '' , timeStamp: '', points: '' ,_id: ''};
@@ -39,7 +40,8 @@ export class SubmitReviewComponent implements OnInit {
 
                   this.reviewService.createReview(review)
                     .then((response) => {
-                      alert("Review Submitted Successfully")
+                        this.submitStatus = true;
+                      alert("Review Submitted Successfully...Crypto credited")
                       this.router.navigate ([`reviewer/${this.user._id}`]);
                     })
 
